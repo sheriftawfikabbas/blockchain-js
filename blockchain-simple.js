@@ -2,11 +2,6 @@
 const crypto = require('crypto');
 
 class Block {
-    /**
-     * @param {number} timestamp
-     * @param {data} data
-     * @param {string} previousHash
-     */
     constructor(timestamp, data, previousHash = '') {
         this.previousHash = previousHash;
         this.timestamp = timestamp;
@@ -26,8 +21,7 @@ class Block {
             .update(
                 this.previousHash +
                 this.timestamp +
-                this.data +
-                this.nonce
+                this.data
             )
             .digest('hex');
     }
