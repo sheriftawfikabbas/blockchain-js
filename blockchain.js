@@ -118,7 +118,7 @@ class Block {
             this.hash = this.calculateHash();
         }
 
-        debug(`Block mined: ${this.hash}`);
+        console.log(`Block mined: ${this.hash}`);
     }
 
     /**
@@ -251,7 +251,7 @@ class Blockchain {
      */
     getBalanceOfAddress(address) {
         let balance = 0;
-
+    
         for (const block of this.chain) {
             for (const trans of block.transactions) {
                 if (trans.fromAddress === address) {
